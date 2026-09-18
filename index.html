@@ -3,16 +3,17 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Abby Progin - Senior Product & Technology Leader</title>
+  <title>Abby Progin | Senior Product & Technology Leader</title>
   <style>
     :root {
-      --primary: #1e293b;
-      --accent: #2563eb;
-      --text: #334155;
-      --text-light: #64748b;
-      --bg: #f8fafc;
-      --card-bg: #ffffff;
-      --border: #e2e8f0;
+      --bg: #0f172a;
+      --card-bg: rgba(30, 41, 59, 0.7);
+      --card-border: rgba(255, 255, 255, 0.1);
+      --accent: #38bdf8;
+      --accent-glow: rgba(56, 189, 248, 0.25);
+      --text: #f8fafc;
+      --text-muted: #94a3b8;
+      --text-dim: #64748b;
     }
 
     * {
@@ -21,153 +22,314 @@
       padding: 0;
     }
 
+    html {
+      scroll-behavior: smooth;
+      scroll-snap-type: y mandatory;
+    }
+
     body {
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-      line-height: 1.6;
-      color: var(--text);
       background-color: var(--bg);
-      padding: 2rem 1rem;
+      color: var(--text);
+      line-height: 1.6;
+      overflow-x: hidden;
     }
 
-    .container {
-      max-width: 850px;
-      margin: 0 auto;
-      background: var(--card-bg);
-      padding: 3rem;
-      border-radius: 8px;
-      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-    }
-
-    header {
+    /* Fixed Navigation Bar */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 100;
+      background: rgba(15, 23, 42, 0.85);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--card-border);
       display: flex;
+      justify-content: space-between;
       align-items: center;
+      padding: 1rem 3rem;
+    }
+
+    .nav-brand {
+      font-weight: 700;
+      font-size: 1.1rem;
+      letter-spacing: -0.02em;
+      color: var(--text);
+    }
+
+    .nav-links {
+      display: flex;
       gap: 2rem;
-      border-bottom: 2px solid var(--border);
-      padding-bottom: 2rem;
-      margin-bottom: 2rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    .nav-links a:hover {
+      color: var(--accent);
+    }
+
+    /* Scroll Snap Sections */
+    section {
+      min-height: 100vh;
+      scroll-snap-align: start;
+      scroll-snap-stop: always;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 6rem 2rem 3rem 2rem;
+      position: relative;
+    }
+
+    .section-content {
+      max-width: 950px;
+      width: 100%;
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 16px;
+      backdrop-filter: blur(16px);
+      padding: 2.5rem;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+      position: relative;
+      overflow-y: auto;
+      max-height: calc(100vh - 8rem);
+    }
+
+    /* Custom Scrollbar for Cards */
+    .section-content::-webkit-scrollbar {
+      width: 6px;
+    }
+    .section-content::-webkit-scrollbar-thumb {
+      background: var(--card-border);
+      border-radius: 4px;
+    }
+
+    /* Hero Section */
+    #hero {
+      text-align: center;
+    }
+
+    .hero-card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1.5rem;
     }
 
     .profile-photo {
-      width: 130px;
-      height: 130px;
+      width: 150px;
+      height: 150px;
       border-radius: 50%;
       object-fit: cover;
       border: 3px solid var(--accent);
-      flex-shrink: 0;
-    }
-
-    .header-text {
-      flex-grow: 1;
+      box-shadow: 0 0 25px var(--accent-glow);
     }
 
     h1 {
-      font-size: 2.25rem;
-      color: var(--primary);
-      letter-spacing: -0.025em;
+      font-size: 3rem;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      background: linear-gradient(135deg, #ffffff 0%, #94a3b8 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
 
-    .subtitle {
-      font-size: 1.05rem;
-      font-weight: 600;
-      color: var(--accent);
-      margin-top: 0.25rem;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-    }
-
-    .contact {
-      margin-top: 0.75rem;
-      font-size: 0.9rem;
-      color: var(--text-light);
-    }
-
-    .contact a {
-      color: var(--accent);
-      text-decoration: none;
-    }
-
-    .contact a:hover {
-      text-decoration: underline;
-    }
-
-    section {
-      margin-bottom: 2rem;
-    }
-
-    .section-title {
+    .hero-subtitle {
       font-size: 1.25rem;
-      color: var(--primary);
+      color: var(--accent);
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    .contact-bar {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1.5rem;
+      margin-top: 1rem;
+      font-size: 0.95rem;
+      color: var(--text-muted);
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .contact-item svg {
+      width: 18px;
+      height: 18px;
+      fill: var(--accent);
+    }
+
+    .contact-bar a {
+      color: var(--text);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .contact-bar a:hover {
+      color: var(--accent);
+    }
+
+    /* Section Headers */
+    .section-header {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 1.5rem;
+      border-bottom: 1px solid var(--card-border);
+      padding-bottom: 0.75rem;
+    }
+
+    .section-header svg {
+      width: 24px;
+      height: 24px;
+      fill: var(--accent);
+    }
+
+    .section-header h2 {
+      font-size: 1.5rem;
+      color: var(--text);
+      font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 0.05em;
-      border-bottom: 1px solid var(--border);
-      padding-bottom: 0.5rem;
-      margin-bottom: 1rem;
     }
 
-    .job {
-      margin-bottom: 1.5rem;
+    /* Timeline & Experience Items */
+    .timeline {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
     }
 
-    .job-header {
+    .timeline-item {
+      position: relative;
+      padding-left: 2rem;
+      border-left: 2px solid var(--card-border);
+    }
+
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: -7px;
+      top: 4px;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: var(--accent);
+      box-shadow: 0 0 10px var(--accent);
+    }
+
+    .role-title-row {
       display: flex;
       justify-content: space-between;
       align-items: baseline;
       flex-wrap: wrap;
     }
 
-    .job-title {
-      font-size: 1.05rem;
+    .role-title {
+      font-size: 1.15rem;
       font-weight: 700;
-      color: var(--primary);
-    }
-
-    .company {
-      font-weight: 600;
       color: var(--text);
-    }
-
-    .date {
-      font-size: 0.875rem;
-      color: var(--text-light);
-      font-weight: 500;
-    }
-
-    ul {
-      list-style-type: disc;
-      margin-left: 1.25rem;
-      margin-top: 0.5rem;
-    }
-
-    li {
-      margin-bottom: 0.5rem;
-      font-size: 0.95rem;
-    }
-
-    .skills-grid {
       display: flex;
-      flex-wrap: wrap;
+      align-items: center;
       gap: 0.5rem;
     }
 
-    .skill-tag {
-      background: #eff6ff;
-      color: var(--accent);
-      padding: 0.25rem 0.75rem;
-      border-radius: 9999px;
-      font-size: 0.85rem;
-      font-weight: 500;
+    .role-title svg {
+      width: 18px;
+      height: 18px;
+      fill: var(--accent);
     }
 
-    @media (max-width: 640px) {
-      .container {
+    .company-name {
+      color: var(--accent);
+      font-weight: 600;
+      font-size: 0.95rem;
+    }
+
+    .date-badge {
+      font-size: 0.85rem;
+      background: rgba(255, 255, 255, 0.05);
+      padding: 0.2rem 0.6rem;
+      border-radius: 6px;
+      color: var(--text-muted);
+      border: 1px solid var(--card-border);
+    }
+
+    ul.bullet-list {
+      list-style-type: none;
+      margin-top: 0.75rem;
+    }
+
+    ul.bullet-list li {
+      position: relative;
+      padding-left: 1.25rem;
+      margin-bottom: 0.6rem;
+      font-size: 0.95rem;
+      color: var(--text-muted);
+    }
+
+    ul.bullet-list li::before {
+      content: '▹';
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+    }
+
+    ul.bullet-list li strong {
+      color: var(--text);
+    }
+
+    /* Skills Badges */
+    .skills-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+
+    .skill-chip {
+      background: rgba(56, 189, 248, 0.1);
+      border: 1px solid rgba(56, 189, 248, 0.2);
+      color: var(--accent);
+      padding: 0.4rem 1rem;
+      border-radius: 20px;
+      font-size: 0.9rem;
+      font-weight: 500;
+      transition: all 0.3s;
+    }
+
+    .skill-chip:hover {
+      background: var(--accent);
+      color: var(--bg);
+      box-shadow: 0 0 15px var(--accent-glow);
+    }
+
+    @media (max-width: 768px) {
+      nav {
+        padding: 1rem 1.5rem;
+      }
+      .nav-links {
+        display: none;
+      }
+      .section-content {
         padding: 1.5rem;
       }
-      header {
-        flex-direction: column;
-        text-align: center;
-        gap: 1rem;
+      h1 {
+        font-size: 2.2rem;
       }
-      .job-header {
+      .role-title-row {
         flex-direction: column;
       }
     }
@@ -175,116 +337,201 @@
 </head>
 <body>
 
-  <div class="container">
-    <header>
-      <img src="profile.jpeg" alt="Abby Progin" class="profile-photo">
-      
-      <div class="header-text">
+  <!-- Navigation -->
+  <nav>
+    <div class="nav-brand">ABBY PROGIN</div>
+    <ul class="nav-links">
+      <li><a href="#hero">Home</a></li>
+      <li><a href="#profile">Profile</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#expertise">Skills & Education</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero / Header Section -->
+  <section id="hero">
+    <div class="section-content hero-card">
+      <img src="Profile.jfif" alt="Abby Progin" class="profile-photo">
+      <div>
         <h1>Abby Progin</h1>
-        <div class="subtitle">Senior Product & Technology Leader</div>
-        <div class="contact">
-          Product Strategy | Business Growth | Technology Transformation | Strategic Partnerships<br>
-          Greater Philadelphia Area &bull; 
-          <a href="mailto:abby.progin@gmail.com">abby.progin@gmail.com</a> &bull; 
+        <div class="hero-subtitle">Senior Product & Technology Leader</div>
+      </div>
+      <p style="color: var(--text-muted); max-width: 650px;">
+        Product Strategy &bull; Business Growth &bull; Technology Transformation &bull; Strategic Partnerships
+      </p>
+      <div class="contact-bar">
+        <div class="contact-item">
+          <!-- Location Icon -->
+          <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+          Greater Philadelphia Area
+        </div>
+        <div class="contact-item">
+          <!-- Email Icon -->
+          <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+          <a href="mailto:abby.progin@gmail.com">abby.progin@gmail.com</a>
+        </div>
+        <div class="contact-item">
+          <!-- LinkedIn Icon -->
+          <svg viewBox="0 0 24 24"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg>
           <a href="https://linkedin.com/in/abigailprogin" target="_blank">linkedin.com/in/abigailprogin</a>
         </div>
       </div>
-    </header>
+    </div>
+  </section>
 
-    <section>
-      <div class="section-title">Executive Profile</div>
-      <p>Senior product and technology leader skilled at turning complex business challenges and market inputs into actionable product strategies, scalable operating practices, and growth opportunities. Proven expertise in conducting strategic portfolio analysis, proposing high-impact initiatives, building technology partner ecosystems, and aligning product direction with executive priorities.</p>
-    </section>
+  <!-- Executive Profile Section -->
+  <section id="profile">
+    <div class="section-content">
+      <div class="section-header">
+        <!-- User Icon -->
+        <svg viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
+        <h2>Executive Profile</h2>
+      </div>
+      <p style="font-size: 1.05rem; color: var(--text-muted); line-height: 1.8;">
+        Senior product and technology leader skilled at turning complex business challenges and market inputs into actionable product strategies, scalable operating practices, and growth opportunities. Proven expertise in conducting strategic portfolio analysis, proposing high-impact initiatives, building technology partner ecosystems, and aligning product direction with executive priorities.
+      </p>
+    </div>
+  </section>
 
-    <section>
-      <div class="section-title">Professional Experience</div>
+  <!-- Experience Section -->
+  <section id="experience">
+    <div class="section-content">
+      <div class="section-header">
+        <!-- Briefcase Icon -->
+        <svg viewBox="0 0 24 24"><path d="M20 6h-4V4c0-1.11-.89-2-2-2h-4c-1.11 0-2 .89-2 2v2H4c-1.11 0-1.99.89-1.99 2L2 19c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V8c0-1.11-.89-2-2-2zm-6 0h-4V4h4v2z"/></svg>
+        <h2>Professional Experience</h2>
+      </div>
 
-      <div class="job">
-        <div class="job-header">
-          <span class="job-title">SVP, Product & Partner Strategy</span>
-          <span class="date">2026 – Present</span>
+      <div class="timeline">
+        <!-- Role 1 -->
+        <div class="timeline-item">
+          <div class="role-title-row">
+            <div class="role-title">
+              <!-- Star/Leader Icon -->
+              <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+              SVP, Product & Partner Strategy
+            </div>
+            <span class="date-badge">2026 – Present</span>
+          </div>
+          <div class="company-name">AKUVO (Vista Equity Partners Portfolio)</div>
+          <ul class="bullet-list">
+            <li><strong>Strategic Roadmap & Initiative Framing:</strong> Conducted cross-functional analysis and stakeholder synthesis to identify strategic product priorities, framing 30 actionable initiatives with defined business outcomes, of which 14 reached the company's 2026 product roadmap.</li>
+            <li><strong>Backlog Organization & Focus:</strong> Standardized how product input is gathered, structured, and prioritized, deploying AI agents to triage, groom, and score the backlog. Cut time from idea submission to scored, ranked backlog item from 30 days to 10, freeing roughly 52 hours of manual effort monthly. ~15% of submitted customer ideas have been delivered as product features.</li>
+            <li><strong>Strategic Partnerships & Ecosystem Expansion:</strong> Evaluated and developed key technology partnerships across AI, payments, insurance, core banking, compliance, and data, delivering Paymentus, MessagePay, REPAY saved payments, and RDN enhancements, with Silverlake Core, Eltropy, Glia, Clutch, Probate, SCRA, and CU Answers in flight. Twelve of my 31 roadmap items carry AKUVO's own Revenue Impact classification, half of all revenue-labeled work in the 2026 plan.</li>
+            <li><strong>Customer & Market Feedback Structures:</strong> Established and led AKUVO's Customer Product Council, a customer-investor advisory forum that remains an active part of the company's product governance. Built a demand signal of 767 active ideas carrying 7,222 votes, and synthesized it into market intelligence informing product strategy and investment proposals.</li>
+            <li><strong>Executive & Stakeholder Collaboration:</strong> Partnered with executive leadership to provide data-driven market insights and product strategy proposals; participated in select sessions on using AI to scale platform operations.</li>
+          </ul>
         </div>
-        <div class="company">AKUVO (Vista Equity Partners Portfolio)</div>
-        <ul>
-          <li><strong>Strategic Roadmap & Initiative Framing:</strong> Conducted cross-functional analysis and stakeholder synthesis to identify strategic product priorities, framing 30 core initiatives (14 reaching the 2026/2027 roadmap).</li>
-          <li><strong>Backlog Organization & Focus:</strong> Standardized product input processes and deployed AI agents to triage, groom, and score the backlog—cutting time from idea submission to scored item from 30 days to 10, saving roughly 52 hours monthly. ~15% of submitted customer ideas delivered as features.</li>
-          <li><strong>Strategic Partnerships & Ecosystem Expansion:</strong> Evaluated and developed key technology partnerships across AI, payments, insurance, core banking, compliance, and data (including Paymentus, MessagePay, REPAY, and RDN; with Silverlake Core, Eltropy, Glia, Clutch, Probate, SCRA, and CU Answers in flight). Account for half of all revenue-labeled work in the 2026 plan.</li>
-          <li><strong>Customer & Market Feedback Structures:</strong> Established and led AKUVO's Customer Product Council. Built a demand signal of 767 active ideas carrying 7,222 votes to synthesize market intelligence for product investment proposals.</li>
-          <li><strong>Executive & Stakeholder Collaboration:</strong> Partnered with executive leadership to provide data-driven market insights and participated in select sessions on utilizing AI to scale platform operations.</li>
-        </ul>
-      </div>
 
-      <div class="job">
-        <div class="job-header">
-          <span class="job-title">SVP, Product Management</span>
-          <span class="date">2023 – 2026</span>
+        <!-- Role 2 -->
+        <div class="timeline-item">
+          <div class="role-title-row">
+            <div class="role-title">
+              <!-- Layers Icon -->
+              <svg viewBox="0 0 24 24"><path d="M11.99 18.54l-7.37-5.73L3 14.07l9 7 9-7-1.63-1.27-7.38 5.74zM12 16l7.36-5.73L21 9l-9-7-9 7 1.63 1.27L12 16z"/></svg>
+              SVP, Product Management
+            </div>
+            <span class="date-badge">2023 – 2026</span>
+          </div>
+          <div class="company-name">AKUVO</div>
+          <ul class="bullet-list">
+            <li><strong>Product Operations Enablement:</strong> Built and scaled the Business Analyst organization from 1 to 4 members, establishing the requirements, design, and documentation handoff standards that translate executive priorities into product delivery.</li>
+            <li><strong>Customer Digital Engagement & Self-Service Infrastructure:</strong> Conceptualized and deployed AKUVO's Knowledge Base and Customer Idea Community, building the Knowledge Base to 300 articles serving roughly 4,700 users at 95% search effectiveness, and the Idea Community to nearly 1,200 submitted ideas, creating a direct feedback loop between customers and product investment.</li>
+          </ul>
         </div>
-        <div class="company">AKUVO</div>
-        <ul>
-          <li><strong>Product Operations Enablement:</strong> Built and scaled the Business Analyst organization from 1 to 4 members, establishing requirements, design, and documentation handoff standards to translate executive priorities into product delivery.</li>
-          <li><strong>Customer Digital Engagement & Infrastructure:</strong> Conceptualized and deployed AKUVO's Knowledge Base (300 articles serving ~4,700 users at 95% search effectiveness) and Customer Idea Community (nearly 1,200 submitted ideas with over 7,000 votes), creating a direct feedback loop between customers and product investment.</li>
-        </ul>
-      </div>
 
-      <div class="job">
-        <div class="job-header">
-          <span class="job-title">Vice President of Product Management</span>
-          <span class="date">2020 – 2023</span>
+        <!-- Role 3 -->
+        <div class="timeline-item">
+          <div class="role-title-row">
+            <div class="role-title">
+              <!-- Rocket Icon -->
+              <svg viewBox="0 0 24 24"><path d="M13.13 22.19l-1.63-3.83c-.22-.52-.73-.86-1.3-.86H7.8l-1.37 2.05c-.32.48-.98.61-1.46.29-.48-.32-.61-.98-.29-1.46L6.5 15.6c-.32-.55-.5-1.18-.5-1.85V10c0-3.31 2.69-6 6-6s6 2.69 6 6v3.75c0 .67-.18 1.3-.5 1.85l1.82 2.73c.32.48.19 1.14-.29 1.46-.48.32-1.14.19-1.46-.29L16.2 17.5h-2.4c-.57 0-1.08.34-1.3.86l-1.63 3.83c-.27.63-.99.92-1.62.65-.64-.27-.93-.99-.66-1.62z"/></svg>
+              Vice President of Product Management
+            </div>
+            <span class="date-badge">2020 – 2023</span>
+          </div>
+          <div class="company-name">AKUVO</div>
+          <ul class="bullet-list">
+            <li><strong>Founding Product Leadership & Early Scaling:</strong> Served as a founding member of the company, actively participating in all foundational product design and development decisions.</li>
+            <li><strong>Early Customer Onboarding & Advisory:</strong> Acted in a dual advisory and implementation role for AKUVO’s first 20 customers to ensure successful adoption and tight product-market fit.</li>
+          </ul>
         </div>
-        <div class="company">AKUVO</div>
-        <ul>
-          <li><strong>Founding Product Leadership & Early Scaling:</strong> Joined as a founding team member of a 100-person startup scaling to $26M ARR across 200+ clients; actively participated in foundational product design and execution decisions.</li>
-          <li><strong>Early Customer Onboarding & Advisory:</strong> Acted in a dual advisory and implementation role for AKUVO’s first 20 customers to ensure successful adoption and tight product-market fit.</li>
-        </ul>
-      </div>
 
-      <div class="job">
-        <div class="job-header">
-          <span class="job-title">Team Lead & Senior Product Evangelist</span>
-          <span class="date">2015 – 2020</span>
+        <!-- Role 4 -->
+        <div class="timeline-item">
+          <div class="role-title-row">
+            <div class="role-title">
+              <!-- Globe Icon -->
+              <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
+              Team Lead & Senior Product Evangelist
+            </div>
+            <span class="date-badge">2015 – 2020</span>
+          </div>
+          <div class="company-name">TEMENOS USA</div>
+          <ul class="bullet-list">
+            <li>Led North American go-to-market evangelism and RFP operations; partnered with Product Management on roadmap strategy while driving strategic customer acquisition and sales conversion.</li>
+          </ul>
         </div>
-        <div class="company">Temenos USA</div>
-        <ul>
-          <li>Led North American go-to-market evangelism and RFP operations; partnered with Product Management on roadmap strategy while driving strategic customer acquisition and sales conversion.</li>
-        </ul>
-      </div>
 
-      <div class="job">
-        <div class="job-header">
-          <span class="job-title">Product Evangelist & Customer Care Specialist</span>
-          <span class="date">2009 – 2015</span>
+        <!-- Role 5 -->
+        <div class="timeline-item">
+          <div class="role-title-row">
+            <div class="role-title">
+              <!-- Check-circle Icon -->
+              <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+              Product Evangelist & Customer Care Specialist
+            </div>
+            <span class="date-badge">2009 – 2015</span>
+          </div>
+          <div class="company-name">AKCELERANT (Acquired by Temenos)</div>
+          <ul class="bullet-list">
+            <li>Drove product demonstration strategies and executive deal support across core lending platforms; built client enablement and technical support capabilities.</li>
+          </ul>
         </div>
-        <div class="company">Akcelerant (Acquired by Temenos)</div>
-        <ul>
-          <li>Drove product demonstration strategies and executive deal support across core platforms; built client enablement and technical support capabilities.</li>
-        </ul>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section>
-      <div class="section-title">Industry & Leadership Expertise</div>
-      <div class="skills-grid">
-        <span class="skill-tag">Strategic Initiative Planning</span>
-        <span class="skill-tag">Product & Portfolio Analysis</span>
-        <span class="skill-tag">AI & Automation Integration</span>
-        <span class="skill-tag">Executive Alignment</span>
-        <span class="skill-tag">Customer & Market Intelligence</span>
-        <span class="skill-tag">Platform Growth Strategy</span>
-        <span class="skill-tag">Cross-Functional Leadership</span>
-        <span class="skill-tag">Backlog Prioritization</span>
-        <span class="skill-tag">SaaS Platforms</span>
-        <span class="skill-tag">Strategic Partnerships</span>
+  <!-- Skills & Education Section -->
+  <section id="expertise">
+    <div class="section-content">
+      <div class="section-header">
+        <!-- CPU/Skills Icon -->
+        <svg viewBox="0 0 24 24"><path d="M15 9H9v6h6V9zm-2 4h-2v-2h2v2zm8-2V9h-2V7c0-1.1-.9-2-2-2h-2V3h-2v2h-2V3H9v2H7c-1.1 0-2 .9-2 2v2H3v2h2v2H3v2h2v2c0 1.1.9 2 2 2h2v2h2v-2h2v2h2v-2h2c1.1 0 2-.9 2-2v-2h2v-2h-2v-2h2zm-4 6H7V7h10v10z"/></svg>
+        <h2>Leadership & Industry Expertise</h2>
       </div>
-    </section>
 
-    <section>
-      <div class="section-title">Education</div>
-      <div class="job-header">
-        <span class="job-title">Bachelor of Business Administration (B.B.A.)</span>
+      <div class="skills-grid" style="margin-bottom: 2.5rem;">
+        <span class="skill-chip">Strategic Initiative Planning</span>
+        <span class="skill-chip">Product & Portfolio Analysis</span>
+        <span class="skill-chip">AI & Automation Integration</span>
+        <span class="skill-chip">Executive Alignment</span>
+        <span class="skill-chip">Customer & Market Intelligence</span>
+        <span class="skill-chip">Platform Growth Strategy</span>
+        <span class="skill-chip">Cross-Functional Leadership</span>
+        <span class="skill-chip">Backlog & Portfolio Prioritization</span>
+        <span class="skill-chip">Financial Technology</span>
+        <span class="skill-chip">SaaS Platforms</span>
+        <span class="skill-chip">Strategic Partnerships</span>
+        <span class="skill-chip">Core Banking & Payments</span>
       </div>
-      <div class="company">Immaculata University</div>
-    </section>
-  </div>
+
+      <div class="section-header">
+        <!-- Graduation Cap Icon -->
+        <svg viewBox="0 0 24 24"><path d="M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82zM12 3L1 9l11 6 9-4.91V17h2V9L12 3z"/></svg>
+        <h2>Education</h2>
+      </div>
+
+      <div>
+        <div style="font-size: 1.1rem; font-weight: 700; color: var(--text);">
+          Bachelor of Business Administration (B.B.A.)
+        </div>
+        <div style="color: var(--accent); font-weight: 600;">
+          Immaculata University
+        </div>
+      </div>
+    </div>
+  </section>
 
 </body>
 </html>
