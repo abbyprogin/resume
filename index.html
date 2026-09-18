@@ -6,13 +6,15 @@
   <title>Abby Progin | Senior Product & Technology Leader</title>
   <style>
     :root {
-      --bg: #0f172a;
-      --card-bg: rgba(30, 41, 59, 0.7);
-      --card-border: rgba(255, 255, 255, 0.1);
-      --accent: #38bdf8;
-      --accent-glow: rgba(56, 189, 248, 0.25);
-      --text: #f8fafc;
-      --text-muted: #94a3b8;
+      --bg: #f8fafc;
+      --card-bg: #ffffff;
+      --card-border: #e2e8f0;
+      --primary-purple: #3b0764;
+      --accent: #4f46e5;
+      --accent-light: #eef2ff;
+      --accent-glow: rgba(79, 70, 229, 0.15);
+      --text: #1e293b;
+      --text-muted: #475569;
       --text-dim: #64748b;
     }
 
@@ -42,7 +44,7 @@
       left: 0;
       width: 100%;
       z-index: 100;
-      background: rgba(15, 23, 42, 0.85);
+      background: rgba(255, 255, 255, 0.9);
       backdrop-filter: blur(12px);
       border-bottom: 1px solid var(--card-border);
       display: flex;
@@ -52,10 +54,10 @@
     }
 
     .nav-brand {
-      font-weight: 700;
+      font-weight: 800;
       font-size: 1.1rem;
       letter-spacing: -0.02em;
-      color: var(--text);
+      color: var(--primary-purple);
     }
 
     .nav-links {
@@ -68,7 +70,7 @@
       color: var(--text-muted);
       text-decoration: none;
       font-size: 0.9rem;
-      font-weight: 500;
+      font-weight: 600;
       transition: color 0.3s;
     }
 
@@ -95,9 +97,8 @@
       background: var(--card-bg);
       border: 1px solid var(--card-border);
       border-radius: 16px;
-      backdrop-filter: blur(16px);
       padding: 2.5rem;
-      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+      box-shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.05), 0 8px 10px -6px rgba(15, 23, 42, 0.05);
       position: relative;
       overflow-y: auto;
       max-height: calc(100vh - 8rem);
@@ -129,23 +130,21 @@
       height: 150px;
       border-radius: 50%;
       object-fit: cover;
-      border: 3px solid var(--accent);
-      box-shadow: 0 0 25px var(--accent-glow);
+      border: 3px solid var(--primary-purple);
+      box-shadow: 0 0 20px var(--accent-glow);
     }
 
     h1 {
       font-size: 3rem;
       font-weight: 800;
       letter-spacing: -0.03em;
-      background: linear-gradient(135deg, #ffffff 0%, #94a3b8 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
+      color: var(--primary-purple);
     }
 
     .hero-subtitle {
       font-size: 1.25rem;
       color: var(--accent);
-      font-weight: 600;
+      font-weight: 700;
       letter-spacing: 0.05em;
       text-transform: uppercase;
     }
@@ -169,12 +168,13 @@
     .contact-item svg {
       width: 18px;
       height: 18px;
-      fill: var(--accent);
+      fill: var(--primary-purple);
     }
 
     .contact-bar a {
       color: var(--text);
       text-decoration: none;
+      font-weight: 500;
       transition: color 0.2s;
     }
 
@@ -188,20 +188,20 @@
       align-items: center;
       gap: 0.75rem;
       margin-bottom: 1.5rem;
-      border-bottom: 1px solid var(--card-border);
+      border-bottom: 2px solid var(--accent-light);
       padding-bottom: 0.75rem;
     }
 
     .section-header svg {
       width: 24px;
       height: 24px;
-      fill: var(--accent);
+      fill: var(--primary-purple);
     }
 
     .section-header h2 {
-      font-size: 1.5rem;
-      color: var(--text);
-      font-weight: 700;
+      font-size: 1.4rem;
+      color: var(--primary-purple);
+      font-weight: 800;
       text-transform: uppercase;
       letter-spacing: 0.05em;
     }
@@ -216,7 +216,7 @@
     .timeline-item {
       position: relative;
       padding-left: 2rem;
-      border-left: 2px solid var(--card-border);
+      border-left: 2px solid var(--accent-light);
     }
 
     .timeline-item::before {
@@ -228,7 +228,6 @@
       height: 12px;
       border-radius: 50%;
       background: var(--accent);
-      box-shadow: 0 0 10px var(--accent);
     }
 
     .role-title-row {
@@ -241,7 +240,7 @@
     .role-title {
       font-size: 1.15rem;
       font-weight: 700;
-      color: var(--text);
+      color: var(--primary-purple);
       display: flex;
       align-items: center;
       gap: 0.5rem;
@@ -261,11 +260,11 @@
 
     .date-badge {
       font-size: 0.85rem;
-      background: rgba(255, 255, 255, 0.05);
+      background: var(--accent-light);
       padding: 0.2rem 0.6rem;
       border-radius: 6px;
-      color: var(--text-muted);
-      border: 1px solid var(--card-border);
+      color: var(--accent);
+      font-weight: 600;
     }
 
     ul.bullet-list {
@@ -286,6 +285,7 @@
       position: absolute;
       left: 0;
       color: var(--accent);
+      font-weight: bold;
     }
 
     ul.bullet-list li strong {
@@ -300,20 +300,20 @@
     }
 
     .skill-chip {
-      background: rgba(56, 189, 248, 0.1);
-      border: 1px solid rgba(56, 189, 248, 0.2);
+      background: var(--accent-light);
+      border: 1px solid rgba(79, 70, 229, 0.2);
       color: var(--accent);
       padding: 0.4rem 1rem;
       border-radius: 20px;
       font-size: 0.9rem;
-      font-weight: 500;
+      font-weight: 600;
       transition: all 0.3s;
     }
 
     .skill-chip:hover {
-      background: var(--accent);
-      color: var(--bg);
-      box-shadow: 0 0 15px var(--accent-glow);
+      background: var(--primary-purple);
+      color: #ffffff;
+      border-color: var(--primary-purple);
     }
 
     @media (max-width: 768px) {
@@ -352,7 +352,7 @@
   <!-- Hero / Header Section -->
   <section id="hero">
     <div class="section-content hero-card">
-      <img src="Profile.jfif" alt="Abby Progin" class="profile-photo">
+      <img src="Profile.jpg" alt="Abby Progin" class="profile-photo">
       <div>
         <h1>Abby Progin</h1>
         <div class="hero-subtitle">Senior Product & Technology Leader</div>
@@ -573,7 +573,7 @@
       </div>
 
       <div>
-        <div style="font-size: 1.1rem; font-weight: 700; color: var(--text);">
+        <div style="font-size: 1.1rem; font-weight: 700; color: var(--primary-purple);">
           Bachelor of Business Administration (B.B.A.)
         </div>
         <div style="color: var(--accent); font-weight: 600;">
