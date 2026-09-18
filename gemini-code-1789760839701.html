@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Abby Progin - Senior Product & Technology Leader</title>
+  <style>
+    :root {
+      --primary: #1e293b;
+      --accent: #2563eb;
+      --text: #334155;
+      --text-light: #64748b;
+      --bg: #f8fafc;
+      --card-bg: #ffffff;
+      --border: #e2e8f0;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      line-height: 1.6;
+      color: var(--text);
+      background-color: var(--bg);
+      padding: 2rem 1rem;
+    }
+
+    .container {
+      max-width: 850px;
+      margin: 0 auto;
+      background: var(--card-bg);
+      padding: 3rem;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    }
+
+    header {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+      border-bottom: 2px solid var(--border);
+      padding-bottom: 2rem;
+      margin-bottom: 2rem;
+    }
+
+    .profile-photo {
+      width: 130px;
+      height: 130px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid var(--accent);
+      flex-shrink: 0;
+    }
+
+    .header-text {
+      flex-grow: 1;
+    }
+
+    h1 {
+      font-size: 2.25rem;
+      color: var(--primary);
+      letter-spacing: -0.025em;
+    }
+
+    .subtitle {
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--accent);
+      margin-top: 0.25rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .contact {
+      margin-top: 0.75rem;
+      font-size: 0.9rem;
+      color: var(--text-light);
+    }
+
+    .contact a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    .contact a:hover {
+      text-decoration: underline;
+    }
+
+    section {
+      margin-bottom: 2rem;
+    }
+
+    .section-title {
+      font-size: 1.25rem;
+      color: var(--primary);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 0.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .job {
+      margin-bottom: 1.5rem;
+    }
+
+    .job-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      flex-wrap: wrap;
+    }
+
+    .job-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--primary);
+    }
+
+    .company {
+      font-weight: 600;
+      color: var(--text);
+    }
+
+    .date {
+      font-size: 0.875rem;
+      color: var(--text-light);
+      font-weight: 500;
+    }
+
+    ul {
+      list-style-type: disc;
+      margin-left: 1.25rem;
+      margin-top: 0.5rem;
+    }
+
+    li {
+      margin-bottom: 0.5rem;
+      font-size: 0.95rem;
+    }
+
+    .skills-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .skill-tag {
+      background: #eff6ff;
+      color: var(--accent);
+      padding: 0.25rem 0.75rem;
+      border-radius: 9999px;
+      font-size: 0.85rem;
+      font-weight: 500;
+    }
+
+    @media (max-width: 640px) {
+      .container {
+        padding: 1.5rem;
+      }
+      header {
+        flex-direction: column;
+        text-align: center;
+        gap: 1rem;
+      }
+      .job-header {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <header>
+      <img src="profile.jpg" alt="Abby Progin" class="profile-photo">
+      
+      <div class="header-text">
+        <h1>Abby Progin</h1>
+        <div class="subtitle">Senior Product & Technology Leader</div>
+        <div class="contact">
+          Product Strategy | Business Growth | Technology Transformation | Strategic Partnerships<br>
+          Greater Philadelphia Area &bull; 
+          <a href="mailto:abby.progin@gmail.com">abby.progin@gmail.com</a> &bull; 
+          <a href="https://linkedin.com/in/abigailprogin" target="_blank">linkedin.com/in/abigailprogin</a>
+        </div>
+      </div>
+    </header>
+
+    <section>
+      <div class="section-title">Executive Profile</div>
+      <p>Senior product and technology leader skilled at turning complex business challenges and market inputs into actionable product strategies, scalable operating practices, and growth opportunities. Proven expertise in conducting strategic portfolio analysis, proposing high-impact initiatives, building technology partner ecosystems, and aligning product direction with executive priorities.</p>
+    </section>
+
+    <section>
+      <div class="section-title">Professional Experience</div>
+
+      <div class="job">
+        <div class="job-header">
+          <span class="job-title">SVP, Product & Partner Strategy</span>
+          <span class="date">2026 – Present</span>
+        </div>
+        <div class="company">AKUVO (Vista Equity Partners Portfolio)</div>
+        <ul>
+          <li><strong>Strategic Roadmap & Initiative Framing:</strong> Conducted cross-functional analysis and stakeholder synthesis to identify strategic product priorities, framing 30 core initiatives (14 reaching the 2026/2027 roadmap).</li>
+          <li><strong>Backlog Organization & Focus:</strong> Standardized product input processes and deployed AI agents to triage, groom, and score the backlog—cutting time from idea submission to scored item from 30 days to 10, saving roughly 52 hours monthly. ~15% of submitted customer ideas delivered as features.</li>
+          <li><strong>Strategic Partnerships & Ecosystem Expansion:</strong> Evaluated and developed key technology partnerships across AI, payments, insurance, core banking, compliance, and data (including Paymentus, MessagePay, REPAY, and RDN; with Silverlake Core, Eltropy, Glia, Clutch, Probate, SCRA, and CU Answers in flight). Account for half of all revenue-labeled work in the 2026 plan.</li>
+          <li><strong>Customer & Market Feedback Structures:</strong> Established and led AKUVO's Customer Product Council. Built a demand signal of 767 active ideas carrying 7,222 votes to synthesize market intelligence for product investment proposals.</li>
+          <li><strong>Executive & Stakeholder Collaboration:</strong> Partnered with executive leadership to provide data-driven market insights and participated in select sessions on utilizing AI to scale platform operations.</li>
+        </ul>
+      </div>
+
+      <div class="job">
+        <div class="job-header">
+          <span class="job-title">SVP, Product Management</span>
+          <span class="date">2023 – 2026</span>
+        </div>
+        <div class="company">AKUVO</div>
+        <ul>
+          <li><strong>Product Operations Enablement:</strong> Built and scaled the Business Analyst organization from 1 to 4 members, establishing requirements, design, and documentation handoff standards to translate executive priorities into product delivery.</li>
+          <li><strong>Customer Digital Engagement & Infrastructure:</strong> Conceptualized and deployed AKUVO's Knowledge Base (300 articles serving ~4,700 users at 95% search effectiveness) and Customer Idea Community (nearly 1,200 submitted ideas with over 7,000 votes), creating a direct feedback loop between customers and product investment.</li>
+        </ul>
+      </div>
+
+      <div class="job">
+        <div class="job-header">
+          <span class="job-title">Vice President of Product Management</span>
+          <span class="date">2020 – 2023</span>
+        </div>
+        <div class="company">AKUVO</div>
+        <ul>
+          <li><strong>Founding Product Leadership & Early Scaling:</strong> Joined as a founding team member of a 100-person startup scaling to $26M ARR across 200+ clients; actively participated in foundational product design and execution decisions.</li>
+          <li><strong>Early Customer Onboarding & Advisory:</strong> Acted in a dual advisory and implementation role for AKUVO’s first 20 customers to ensure successful adoption and tight product-market fit.</li>
+        </ul>
+      </div>
+
+      <div class="job">
+        <div class="job-header">
+          <span class="job-title">Team Lead & Senior Product Evangelist</span>
+          <span class="date">2015 – 2020</span>
+        </div>
+        <div class="company">Temenos USA</div>
+        <ul>
+          <li>Led North American go-to-market evangelism and RFP operations; partnered with Product Management on roadmap strategy while driving strategic customer acquisition and sales conversion.</li>
+        </ul>
+      </div>
+
+      <div class="job">
+        <div class="job-header">
+          <span class="job-title">Product Evangelist & Customer Care Specialist</span>
+          <span class="date">2009 – 2015</span>
+        </div>
+        <div class="company">Akcelerant (Acquired by Temenos)</div>
+        <ul>
+          <li>Drove product demonstration strategies and executive deal support across core platforms; built client enablement and technical support capabilities.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section>
+      <div class="section-title">Industry & Leadership Expertise</div>
+      <div class="skills-grid">
+        <span class="skill-tag">Strategic Initiative Planning</span>
+        <span class="skill-tag">Product & Portfolio Analysis</span>
+        <span class="skill-tag">AI & Automation Integration</span>
+        <span class="skill-tag">Executive Alignment</span>
+        <span class="skill-tag">Customer & Market Intelligence</span>
+        <span class="skill-tag">Platform Growth Strategy</span>
+        <span class="skill-tag">Cross-Functional Leadership</span>
+        <span class="skill-tag">Backlog Prioritization</span>
+        <span class="skill-tag">SaaS Platforms</span>
+        <span class="skill-tag">Strategic Partnerships</span>
+      </div>
+    </section>
+
+    <section>
+      <div class="section-title">Education</div>
+      <div class="job-header">
+        <span class="job-title">Bachelor of Business Administration (B.B.A.)</span>
+      </div>
+      <div class="company">Immaculata University</div>
+    </section>
+  </div>
+
+</body>
+</html>
