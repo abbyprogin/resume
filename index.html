@@ -243,15 +243,21 @@
       line-height: 1.3;
     }
 
-    .build-tag {
-      font-size: 0.7rem;
-      background: var(--accent-light);
-      color: var(--accent);
-      padding: 0.2rem 0.5rem;
-      border-radius: 8px;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.03em;
+    .project-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin-top: 0.25rem;
+    }
+
+    .project-chip {
+      background: #ffffff;
+      border: 1px solid #d1d1d6;
+      color: var(--primary-text);
+      font-size: 0.72rem;
+      padding: 0.15rem 0.5rem;
+      border-radius: 12px;
+      font-weight: 500;
     }
 
     .media-placeholder {
@@ -541,8 +547,13 @@
           <!-- Project 1: Idea Community -->
           <div class="build-card">
             <div class="build-header">
-              <span class="build-tag">Product Discovery & Feedback</span>
               <div class="build-title">1. Customer Idea Community & Demand Signals Engine</div>
+              <div class="project-tags">
+                <span class="project-chip">Idea Community</span>
+                <span class="project-chip">Power BI</span>
+                <span class="project-chip">DAX Reporting</span>
+                <span class="project-chip">VoC Signals</span>
+              </div>
             </div>
             <p style="font-size: 0.88rem; color: var(--secondary-text);">
               <strong style="color: var(--primary-text);">Context & Build:</strong> Conceptualized and deployed AKUVO's Customer Idea Community to replace roadmap assumptions with direct market feedback. Built Power BI telemetry to track backlog health across a 6-part investment framework.
@@ -561,8 +572,13 @@
           <!-- Project 2: AI Triage Agent -->
           <div class="build-card">
             <div class="build-header">
-              <span class="build-tag">AI & Automation / Copilot Studio</span>
               <div class="build-title">2. AI-Driven Backlog Triage & Prioritization Engine</div>
+              <div class="project-tags">
+                <span class="project-chip">Copilot Studio</span>
+                <span class="project-chip">Power Automate</span>
+                <span class="project-chip">Azure DevOps</span>
+                <span class="project-chip">RICE Framework</span>
+              </div>
             </div>
             <p style="font-size: 0.88rem; color: var(--secondary-text);">
               <strong style="color: var(--primary-text);">Context & Build:</strong> To resolve a 30-day queue bottleneck, built an agentic triage engine using Copilot Studio, Power Automate, and Azure DevOps to score incoming ideas via a calibrated RICE framework.
@@ -584,7 +600,12 @@
         <div class="build-card">
           <div class="build-header">
             <div class="build-title">3. AI-Assisted Self-Service Knowledge Engine</div>
-            <span class="build-tag">GenAI & Self-Service</span>
+            <div class="project-tags">
+              <span class="project-chip">Generative AI</span>
+              <span class="project-chip">Code-to-Doc LLM Agent</span>
+              <span class="project-chip">Human-in-the-Loop</span>
+              <span class="project-chip">Knowledge Architecture</span>
+            </div>
           </div>
           <p style="font-size: 0.92rem; color: var(--secondary-text);">
             <strong style="color: var(--primary-text);">Context & Build:</strong> To scale customer onboarding without increasing content headcount, conceptualized and built the enterprise Knowledge Base. Developed an AI drafting agent that ingests technical feature requirements and code to automatically generate structured documentation for human review and approval.
