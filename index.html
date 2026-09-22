@@ -205,6 +205,81 @@
       letter-spacing: -0.02em;
     }
 
+    /* Resume Button Style */
+    .resume-button-container {
+      margin-top: 2rem;
+      display: flex;
+      justify-content: flex-start;
+    }
+
+    .btn-resume {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      background-color: var(--accent);
+      color: #ffffff;
+      text-decoration: none;
+      padding: 0.65rem 1.25rem;
+      border-radius: 12px;
+      font-size: 0.9rem;
+      font-weight: 500;
+      transition: all 0.2s ease;
+      box-shadow: 0 2px 8px rgba(0, 113, 227, 0.2);
+    }
+
+    .btn-resume:hover {
+      background-color: #005bb5;
+      transform: translateY(-1px);
+      box-shadow: 0 4px 12px rgba(0, 113, 227, 0.3);
+    }
+
+    .btn-resume svg {
+      width: 18px;
+      height: 18px;
+      fill: #ffffff;
+    }
+
+    /* Timeline Items */
+    .timeline {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+
+    .timeline-item {
+      position: relative;
+      padding-left: 1.75rem;
+      border-left: 2px solid var(--card-border);
+    }
+
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: -6px;
+      top: 6px;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--accent);
+    }
+
+    .role-title-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      flex-wrap: wrap;
+    }
+
+    .role-title {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--primary-text);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      letter-spacing: -0.01em;
+    }
+
     /* Featured Builds Cards Grid */
     .builds-container {
       display: flex;
@@ -282,70 +357,6 @@
       width: 28px;
       height: 28px;
       fill: #a1a1a6;
-    }
-
-    /* Timeline & Experience Items */
-    .timeline {
-      display: flex;
-      flex-direction: column;
-      gap: 2rem;
-    }
-
-    .timeline-item {
-      position: relative;
-      padding-left: 1.75rem;
-      border-left: 2px solid var(--card-border);
-    }
-
-    .timeline-item::before {
-      content: '';
-      position: absolute;
-      left: -6px;
-      top: 6px;
-      width: 10px;
-      height: 10px;
-      border-radius: 50%;
-      background: var(--accent);
-    }
-
-    .role-title-row {
-      display: flex;
-      justify-content: space-between;
-      align-items: baseline;
-      flex-wrap: wrap;
-    }
-
-    .role-title {
-      font-size: 1.1rem;
-      font-weight: 600;
-      color: var(--primary-text);
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      letter-spacing: -0.01em;
-    }
-
-    .role-title svg {
-      width: 18px;
-      height: 18px;
-      fill: var(--accent);
-    }
-
-    .company-name {
-      color: var(--secondary-text);
-      font-weight: 500;
-      font-size: 0.95rem;
-      margin-top: 0.1rem;
-    }
-
-    .date-badge {
-      font-size: 0.8rem;
-      background: var(--bg);
-      padding: 0.2rem 0.6rem;
-      border-radius: 12px;
-      color: var(--secondary-text);
-      font-weight: 500;
-      border: 1px solid var(--card-border);
     }
 
     ul.bullet-list {
@@ -431,7 +442,6 @@
       <li><a href="#profile">Profile</a></li>
       <li><a href="#impact">Impact</a></li>
       <li><a href="#builds">Featured Projects</a></li>
-      <li><a href="#experience">Experience</a></li>
       <li><a href="#expertise">Skills & Education</a></li>
     </ul>
   </nav>
@@ -478,6 +488,15 @@
       <p style="font-size: 1rem; color: var(--secondary-text); line-height: 1.7;">
         Senior product and technology leader skilled at turning complex business challenges and market inputs into actionable product strategies, scalable operating practices, and growth opportunities. Proven expertise in conducting strategic portfolio analysis, proposing high-impact initiatives, building technology partner ecosystems, and aligning product direction with executive priorities. Recognized for pioneering AI-driven backlog governance, structuring data-backed prioritization frameworks, and scaling cross-functional teams across fintech, banking, and SaaS environments.
       </p>
+      
+      <!-- Resume Link Button -->
+      <div class="resume-button-container">
+        <a href="Abby Progin - Resume.pdf" target="_blank" class="btn-resume">
+          <!-- Document / Download Icon -->
+          <svg viewBox="0 0 24 24"><path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/></svg>
+          View Full Resume (PDF)
+        </a>
+      </div>
     </div>
   </section>
 
@@ -523,7 +542,7 @@
             <div class="role-title">Revenue & Operational Acceleration</div>
           </div>
           <p style="color: var(--secondary-text); margin-top: 0.25rem; font-size: 0.92rem;">
-            Framed 30 core strategic initiatives through customer and market discovery (driving 14 onto the roadmap), deployed AI agents to achieve <strong style="color: var(--primary-text);">70% immediate backlog scoring</strong> (saving ~1000+ resource hours annually), and spearheaded partner integrations accounting for <strong style="color: var(--primary-text);">half of all revenue-labeled work</strong> in the strategy plan.
+            Framed 30 core strategic initiatives through customer and market discovery (driving 14 onto the roadmap), deployed AI agents to achieve <strong style="color: var(--primary-text);">70% immediate backlog scoring</strong> (saving ~1,000+ resource hours annually), and spearheaded partner integrations accounting for <strong style="color: var(--primary-text);">half of all revenue-labeled work</strong> in the strategy plan.
           </p>
         </div>
       </div>
@@ -564,7 +583,7 @@
             </ul>
             <!-- Media Placeholder -->
             <div class="media-placeholder">
-              <svg viewBox="0 0 24 24"><path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1 0 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z"/></svg>
               <span>[ Placeholder: idea-community-telemetry.jpg ]</span>
             </div>
           </div>
@@ -585,7 +604,7 @@
             </p>
             <ul class="bullet-list" style="margin-top: 0.25rem;">
               <li><strong>70% Instant AI Triage:</strong> Processed and scored ~70% of incoming ideas immediately upon submission, routing them straight to the active backlog.</li>
-              <li><strong>624 Hours Saved / Year:</strong> Reduced manual triage queue from 315 to 37 items, saving ~52 hours monthly in overhead.</li>
+              <li><strong>~1,000+ Resource Hours Saved:</strong> Reduced manual triage queue from 315 to 37 items, clearing administrative overhead annually.</li>
             </ul>
             <!-- Media Placeholder -->
             <div class="media-placeholder">
@@ -621,87 +640,6 @@
           </div>
         </div>
 
-      </div>
-    </div>
-  </section>
-
-  <!-- Experience Section -->
-  <section id="experience">
-    <div class="section-content">
-      <div class="section-header">
-        <!-- Briefcase Icon -->
-        <svg viewBox="0 0 24 24"><path d="M20 6h-4V4c0-1.11-.89-2-2-2h-4c-1.11 0-2 .89-2 2v2H4c-1.11 0-1.99.89-1.99 2L2 19c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V8c0-1.11-.89-2-2-2zm-6 0h-4V4h4v2z"/></svg>
-        <h2>Professional Experience</h2>
-      </div>
-
-      <div class="timeline">
-        <!-- Role 1 -->
-        <div class="timeline-item">
-          <div class="role-title-row">
-            <div class="role-title">SVP, Product & Partner Strategy</div>
-            <span class="date-badge">2026 – Present</span>
-          </div>
-          <div class="company-name">AKUVO (Vista Equity Partners Portfolio)</div>
-          <ul class="bullet-list">
-            <li><strong>AI-Driven Backlog & Intake Architecture:</strong> Built an automated customer demand intake and RICE scoring engine using Copilot Studio, Power Automate, and Azure DevOps. Deployed AI agents to triage, groom, and score incoming ideas, processing ~70% of ideas immediately upon submission, clearing manual triage queue from 315 to 37 items, and saving ~52 hours monthly (624 hours annually).</li>
-            <li><strong>Market-Driven Portfolio Prioritization:</strong> Scaled customer idea repository to hold over 1,250 ideas with 11,400+ votes and 920+ comments (82% customer-submitted). Established a data-backed scoring rubric measuring reach against benchmarked development effort, resulting in a 30% conversion rate from customer demand to shipped or planned roadmap features.</li>
-            <li><strong>Investment Category Framework:</strong> Designed a 6-part investment framework (Customer Value, Revenue Impact, Contractual Commitments, Architecture, Organizational Efficiency, Security & Compliance) to allocate roadmap capacity against business intent rather than request volume.</li>
-            <li><strong>Strategic Roadmap & Initiative Framing:</strong> Conducted cross-functional analysis and stakeholder discovery to define scope and execution briefs for 30 strategic initiatives across platform layers, successfully driving 14 major initiatives onto the 2026 product roadmap.</li>
-            <li><strong>Partner Ecosystem & Integration Delivery:</strong> Served as named product stakeholder for 31 high-priority delivery items (19 completed, 12 in flight/planned), representing 872+ hours of completed delivery. Architected key integrations across core banking systems, digital payment providers, automated communication tools, insurance tracking, legal/compliance workflows, and remarketing platforms. Managed 12 roadmap items carrying direct Revenue Impact classifications (50% of all revenue-labeled work in the plan).</li>
-            <li><strong>Executive Decision Support & Analytics:</strong> Built custom Power BI dashboards and DAX measures to provide executive leadership and product teams with real-time pipeline visibility and data-driven market insights.</li>
-          </ul>
-        </div>
-
-        <!-- Role 2 -->
-        <div class="timeline-item">
-          <div class="role-title-row">
-            <div class="role-title">SVP, Product Management</div>
-            <span class="date-badge">2023 – 2026</span>
-          </div>
-          <div class="company-name">AKUVO</div>
-          <ul class="bullet-list">
-            <li><strong>Product Operations & 200% Team Growth:</strong> Built, scaled, and managed the Business Analyst organization, achieving 200% team growth. Introduced AI tooling into authoring, prototyping, and design workflows to elevate output quality and establish standardized requirements, design, and handoff documentation practices.</li>
-            <li><strong>Customer Digital Engagement & Self-Service:</strong> Conceptualized, built, and deployed AKUVO's Knowledge Base and Customer Idea Community, scaling the Knowledge Base to 300+ articles serving ~4,700 users at 95% search effectiveness, and the Idea Community to nearly 1,200 submitted ideas.</li>
-            <li><strong>Customer Product Governance:</strong> Established and led AKUVO's Customer Product Council—a 9-member customer-investor advisory forum that remains an active part of core product governance.</li>
-          </ul>
-        </div>
-
-        <!-- Role 3 -->
-        <div class="timeline-item">
-          <div class="role-title-row">
-            <div class="role-title">Vice President of Product Management</div>
-            <span class="date-badge">2020 – 2023</span>
-          </div>
-          <div class="company-name">AKUVO</div>
-          <ul class="bullet-list">
-            <li><strong>Founding Product Leadership & Early Scaling:</strong> Served as a founding member of AKUVO, actively participating in all foundational product design, architectural choices, and core development decisions.</li>
-            <li><strong>Early Customer Onboarding & Advisory:</strong> Acted in a dual product advisory and technical implementation role for AKUVO’s first 20 enterprise clients, securing high adoption rates and tight product-market fit.</li>
-          </ul>
-        </div>
-
-        <!-- Role 4 -->
-        <div class="timeline-item">
-          <div class="role-title-row">
-            <div class="role-title">Team Lead & Senior Product Evangelist</div>
-            <span class="date-badge">2015 – 2020</span>
-          </div>
-          <div class="company-name">TEMENOS USA</div>
-          <ul class="bullet-list">
-            <li>Led North American go-to-market evangelism and RFP operations; partnered closely with Product Management on roadmap strategy while driving strategic customer acquisition and sales conversions.</li>
-          </ul>
-        </div>
-
-        <!-- Role 5 -->
-        <div class="timeline-item">
-          <div class="role-title-row">
-            <div class="role-title">Product Evangelist & Customer Care Specialist</div>
-            <span class="date-badge">2009 – 2015</span>
-          </div>
-          <div class="company-name">AKCELERANT (Acquired by Temenos)</div>
-          <ul class="bullet-list">
-            <li>Drove product demonstration strategies and executive deal support across core lending platforms; built client enablement and technical support capabilities.</li>
-          </ul>
-        </div>
       </div>
     </div>
   </section>
