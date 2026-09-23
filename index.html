@@ -264,27 +264,20 @@
       letter-spacing: -0.01em;
     }
 
-    /* Featured Builds Cards Grid */
+    /* Featured Builds Cards Stack (Single Column) */
     .builds-container {
       display: flex;
       flex-direction: column;
       gap: 1.5rem;
     }
 
-    .builds-grid-2col {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1.5rem;
-    }
-
     .build-card {
       border: 1px solid var(--card-border);
       border-radius: 12px;
-      padding: 1.5rem;
+      padding: 1.75rem;
       background: #fafafa;
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
       gap: 1rem;
     }
 
@@ -296,7 +289,7 @@
     }
 
     .build-title {
-      font-size: 1.05rem;
+      font-size: 1.1rem;
       font-weight: 600;
       color: var(--primary-text);
       line-height: 1.3;
@@ -319,25 +312,28 @@
       font-weight: 500;
     }
 
-    /* Updated Project Image Styling */
+    /* Fixed Image Fit Styles */
     .project-image {
       width: 100%;
-      height: 160px;
-      object-fit: cover;
+      max-height: 380px;
+      object-fit: contain;
+      object-position: center;
       border: 1px solid var(--card-border);
       border-radius: 8px;
       background: #ffffff;
+      padding: 0.5rem;
+      margin-top: 0.5rem;
     }
 
     ul.bullet-list {
       list-style-type: none;
-      margin-top: 0.75rem;
+      margin-top: 0.5rem;
     }
 
     ul.bullet-list li {
       position: relative;
       padding-left: 1.25rem;
-      margin-bottom: 0.6rem;
+      margin-bottom: 0.5rem;
       font-size: 0.92rem;
       color: var(--secondary-text);
       line-height: 1.6;
@@ -392,9 +388,6 @@
       }
       h1 {
         font-size: 2.2rem;
-      }
-      .builds-grid-2col {
-        grid-template-columns: 1fr;
       }
       .role-title-row {
         flex-direction: column;
@@ -504,7 +497,7 @@
     </div>
   </section>
 
-  <!-- Featured Projects Section -->
+  <!-- Featured Projects Section (Single Column Stack) -->
   <section id="builds">
     <div class="section-content">
       <div class="section-header">
@@ -515,56 +508,51 @@
 
       <div class="builds-container">
         
-        <!-- Two Column Grid for Projects 1 & 2 -->
-        <div class="builds-grid-2col">
-          
-          <!-- Project 1: Idea Community -->
-          <div class="build-card">
-            <div class="build-header">
-              <div class="build-title">1. Customer Idea Community & Demand Signals Engine</div>
-              <div class="project-tags">
-                <span class="project-chip">Idea Community</span>
-                <span class="project-chip">Power BI</span>
-                <span class="project-chip">DAX Reporting</span>
-                <span class="project-chip">VoC Signals</span>
-              </div>
+        <!-- Project 1: Idea Community -->
+        <div class="build-card">
+          <div class="build-header">
+            <div class="build-title">1. Customer Idea Community & Demand Signals Engine</div>
+            <div class="project-tags">
+              <span class="project-chip">Idea Community</span>
+              <span class="project-chip">Power BI</span>
+              <span class="project-chip">DAX Reporting</span>
+              <span class="project-chip">VoC Signals</span>
             </div>
-            <p style="font-size: 0.88rem; color: var(--secondary-text);">
-              <strong style="color: var(--primary-text);">Context & Build:</strong> Conceptualized and deployed AKUVO's Customer Idea Community to replace roadmap assumptions with direct market feedback. Built Power BI telemetry to track backlog health across a 6-part investment framework.
-            </p>
-            <ul class="bullet-list" style="margin-top: 0.25rem;">
-              <li><strong>1,250+ Ideas & 11,400+ Votes:</strong> Captured demand signals across 800+ active users.</li>
-              <li><strong>30% Conversion Rate:</strong> Direct pipeline from customer demand to roadmap delivery.</li>
-            </ul>
-            <!-- Actual Image File -->
-            <img src="idea-community-telemetry.jpg" alt="Customer Idea Community & Power BI Telemetry" class="project-image">
           </div>
-
-          <!-- Project 2: AI Triage Agent -->
-          <div class="build-card">
-            <div class="build-header">
-              <div class="build-title">2. AI-Driven Backlog Triage & Prioritization Engine</div>
-              <div class="project-tags">
-                <span class="project-chip">Copilot Studio</span>
-                <span class="project-chip">Power Automate</span>
-                <span class="project-chip">Azure DevOps</span>
-                <span class="project-chip">RICE Framework</span>
-              </div>
-            </div>
-            <p style="font-size: 0.88rem; color: var(--secondary-text);">
-              <strong style="color: var(--primary-text);">Context & Build:</strong> To eliminate manual intake bottlenecks, built an agentic triage engine using Copilot Studio, Power Automate, and Azure DevOps to automatically groom ideas and calculate RICE scores via benchmarked customer reach and effort data.
-            </p>
-            <ul class="bullet-list" style="margin-top: 0.25rem;">
-              <li><strong>70% Instant AI Triage:</strong> Processed and scored ~70% of incoming ideas immediately upon submission, routing them straight to the active backlog.</li>
-              <li><strong>~1,000+ Resource Hours Saved:</strong> Reduced manual triage queue from 315 to 37 items, clearing administrative overhead annually.</li>
-            </ul>
-            <!-- Actual Image File -->
-            <img src="ai-triage-architecture.jpg" alt="AI Triage Architecture" class="project-image">
-          </div>
-
+          <p style="font-size: 0.9rem; color: var(--secondary-text);">
+            <strong style="color: var(--primary-text);">Context & Build:</strong> Conceptualized and deployed AKUVO's Customer Idea Community to replace roadmap assumptions with direct market feedback. Built Power BI telemetry to track backlog health across a 6-part investment framework.
+          </p>
+          <ul class="bullet-list">
+            <li><strong>1,250+ Ideas & 11,400+ Votes:</strong> Captured demand signals across 800+ active users.</li>
+            <li><strong>30% Conversion Rate:</strong> Direct pipeline from customer demand to roadmap delivery.</li>
+          </ul>
+          <!-- Actual Image File -->
+          <img src="idea-community-telemetry.jpg" alt="Customer Idea Community & Power BI Telemetry" class="project-image">
         </div>
 
-        <!-- Project 3: AI Knowledge Base Agent (Full Width) -->
+        <!-- Project 2: AI Triage Agent -->
+        <div class="build-card">
+          <div class="build-header">
+            <div class="build-title">2. AI-Driven Backlog Triage & Prioritization Engine</div>
+            <div class="project-tags">
+              <span class="project-chip">Copilot Studio</span>
+              <span class="project-chip">Power Automate</span>
+              <span class="project-chip">Azure DevOps</span>
+              <span class="project-chip">RICE Framework</span>
+            </div>
+          </div>
+          <p style="font-size: 0.9rem; color: var(--secondary-text);">
+            <strong style="color: var(--primary-text);">Context & Build:</strong> To eliminate manual intake bottlenecks, built an agentic triage engine using Copilot Studio, Power Automate, and Azure DevOps to automatically groom ideas and calculate RICE scores via benchmarked customer reach and effort data.
+          </p>
+          <ul class="bullet-list">
+            <li><strong>70% Instant AI Triage:</strong> Processed and scored ~70% of incoming ideas immediately upon submission, routing them straight to the active backlog.</li>
+            <li><strong>~1,000+ Resource Hours Saved:</strong> Reduced manual triage queue from 315 to 37 items, clearing administrative overhead annually.</li>
+          </ul>
+          <!-- Actual Image File -->
+          <img src="ai-triage-architecture.jpg" alt="AI Triage Architecture" class="project-image">
+        </div>
+
+        <!-- Project 3: AI Knowledge Base Agent -->
         <div class="build-card">
           <div class="build-header">
             <div class="build-title">3. AI-Assisted Self-Service Knowledge Engine</div>
@@ -575,7 +563,7 @@
               <span class="project-chip">Knowledge Architecture</span>
             </div>
           </div>
-          <p style="font-size: 0.92rem; color: var(--secondary-text);">
+          <p style="font-size: 0.9rem; color: var(--secondary-text);">
             <strong style="color: var(--primary-text);">Context & Build:</strong> To scale customer onboarding without increasing content headcount, conceptualized and built the enterprise Knowledge Base. Developed an AI drafting agent that ingests technical feature requirements and code to automatically generate structured documentation for human review and approval.
           </p>
           <ul class="bullet-list">
