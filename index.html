@@ -319,28 +319,14 @@
       font-weight: 500;
     }
 
-    .media-placeholder {
+    /* Updated Project Image Styling */
+    .project-image {
       width: 100%;
       height: 160px;
-      border: 2px dashed #d1d1d6;
+      object-fit: cover;
+      border: 1px solid var(--card-border);
       border-radius: 8px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
       background: #ffffff;
-      color: var(--secondary-text);
-      font-size: 0.8rem;
-      text-align: center;
-      padding: 0.75rem;
-      gap: 0.4rem;
-      transition: border-color 0.2s;
-    }
-
-    .media-placeholder svg {
-      width: 28px;
-      height: 28px;
-      fill: #a1a1a6;
     }
 
     ul.bullet-list {
@@ -550,11 +536,8 @@
               <li><strong>1,250+ Ideas & 11,400+ Votes:</strong> Captured demand signals across 800+ active users.</li>
               <li><strong>30% Conversion Rate:</strong> Direct pipeline from customer demand to roadmap delivery.</li>
             </ul>
-            <!-- Media Placeholder -->
-            <div class="media-placeholder">
-              <svg viewBox="0 0 24 24"><path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z"/></svg>
-              <span>[ Placeholder: idea-community-telemetry.jpg ]</span>
-            </div>
+            <!-- Actual Image File -->
+            <img src="idea-community-telemetry.jpg" alt="Customer Idea Community & Power BI Telemetry" class="project-image">
           </div>
 
           <!-- Project 2: AI Triage Agent -->
@@ -575,11 +558,8 @@
               <li><strong>70% Instant AI Triage:</strong> Processed and scored ~70% of incoming ideas immediately upon submission, routing them straight to the active backlog.</li>
               <li><strong>~1,000+ Resource Hours Saved:</strong> Reduced manual triage queue from 315 to 37 items, clearing administrative overhead annually.</li>
             </ul>
-            <!-- Media Placeholder -->
-            <div class="media-placeholder">
-              <svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1 0 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/></svg>
-              <span>[ai-triage-architecture.jpg ]</span>
-            </div>
+            <!-- Actual Image File -->
+            <img src="ai-triage-architecture.jpg" alt="AI Triage Architecture" class="project-image">
           </div>
 
         </div>
@@ -602,11 +582,8 @@
             <li><strong>Rapid Documentation Scale:</strong> Built Knowledge Base to 300+ articles serving ~4,700 users at a 95% search effectiveness rate.</li>
             <li><strong>Human-in-the-Loop Efficiency:</strong> Accelerated document creation times from feature release to public deployment while maintaining high editorial standards.</li>
           </ul>
-          <!-- Media Placeholder -->
-          <div class="media-placeholder">
-            <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
-            <span>[knowledge-base-ai-agent.jpg]</span>
-          </div>
+          <!-- Actual Image File -->
+          <img src="knowledge-base-ai-agent.jpg" alt="AI Knowledge Base Agent Architecture" class="project-image">
         </div>
 
       </div>
