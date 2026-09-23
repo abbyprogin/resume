@@ -312,17 +312,17 @@
       font-weight: 500;
     }
 
-    /* Fixed Image Fit Styles */
+    /* Larger Project Image Fit Styles */
     .project-image {
       width: 100%;
       height: auto;
-      max-height: none;
-      object-fit: fill;
+      max-height: 480px; /* Increased height to make images larger and clearer */
+      object-fit: contain; /* Ensures diagrams scale cleanly without awkward cropping */
       border: 1px solid var(--card-border);
       border-radius: 8px;
       background: #ffffff;
-      padding: 0.5rem;
-      margin-top: 0.5rem;
+      padding: 0.75rem;
+      margin-top: 0.75rem;
     }
 
     ul.bullet-list {
